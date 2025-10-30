@@ -5,8 +5,8 @@ Määrittelen tässä dokumentissa Helsingin yliopiston Aineopintojen harjoitust
 
 ## Harjoitustyön aihe ja toteutus
 
-Harjoitustyöni aiheena on kirjoitusvirheiden korjaaja, joka korjaa käyttäjän tekstisyötteenä antamia sanoja. Työn ydin on siis algoritmi, joka vertaa käyttäjän syötteenä antamia sanoja ohjelman suomenkieliseen sanastoon, ja joka tarjoaa ehdotuksia väärinkirjoitetun sanan korjaamiseksi.
-Toteutan työni pythonilla, joka on ainoa ohjelmointikieli, jonka tällä hetkellä osaan kunnolla. Hyödynnän työssäni trie-tietorakennetta ja Damerau-Levenshteinin -etäisyysalgoritmia. Ohjelma saa syötteekseen käyttäjän ohjelmalle antamia yksittäisiä sanoja, joita verrataan trie-tietorakenteeseen tallennettuun sanastoon. Lähteiden perusteella trie-tietorakenteen aikavaativuus on O(n) ja Damerau-Levenshteinin -etäisyyden puolestaan O(m*n).
+Harjoitustyöni aiheena on kirjoitusvirheiden korjaaja, joka korjaa käyttäjän tekstisyötteenä antamia sanoja. Työn ydin on siis algoritmi, joka vertaa käyttäjän syötteenä antamia sanoja ohjelman suomenkieliseen sanastoon ja mittaa etäisyyden oikein kirjoitettuun sanaan. Algoritmi tarjoaa myös ehdotuksia väärinkirjoitetun sanan korjaamiseksi etsimällä sanastosta lähimmän sanan.
+Toteutan työni pythonilla, joka on ainoa ohjelmointikieli, jonka tällä hetkellä hallitsen riittävän hyvin. Hyödynnän työssäni kurssimateriaalissa mainittuja trie-tietorakennetta ja Damerau-Levenshteinin -etäisyysalgoritmia. Ohjelma saa syötteekseen käyttäjän ohjelmalle antamia yksittäisiä sanoja, joita verrataan trie-tietorakenteeseen tallennettuun sanastoon. Lähteiden perusteella trie-tietorakenteen aikavaativuus on O(n) ja Damerau-Levenshteinin -etäisyyden puolestaan O(m*n).
 
 ## Dokumentaation kieli
 
