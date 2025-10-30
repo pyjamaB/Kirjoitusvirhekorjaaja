@@ -5,6 +5,6 @@ Tämä on Helsingin yliopiston tietojenkäsittelytieteen kandiohjelman Aineopint
 [Määrittelydokumentti](docs/maarittelydokumentti.md)
 
 ## Viikkoraportit
-[Viikoraportti 1](docs/viikkoraportti1.md)
+[Viikkoraportti 1](docs/viikkoraportti1.md)
 
 ## Käyttöohjeet
