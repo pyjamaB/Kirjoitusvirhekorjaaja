@@ -1,2 +1,10 @@
 # Kirjoitusvirhekorjaaja
-Helsingin yliopisto/Aineopintojen harjoitustyö: Algoritmit ja tekoäly
+Tämä on Helsingin yliopiston tietojenkäsittelytieteen kandiohjelman Aineopintojen harjoitustyö: Algoritmit ja tekoäly -kurssilla toteutettava harjoitustyö.
+
+## Dokumentaatio
+[Määrittelydokumentti](docs/maarittelydokumentti.md)
+
+## Viikkoraportit
+[Viikoraportti 1](docs/viikkoraportti1.md)
+
+## Käyttöohjeet
