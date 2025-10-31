@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}Kirjoitusvirhekorjaaja{% endblock %}
+
+{% block content %}
+<h2>Tarkista oikeinkirjoitus</h2>
+<form action="/check_typos" method="post">
+  <p>
+    <label for="word">Korjattava sana (max. 30 merkkiä):</label> <br />
+    <textarea name="word" id="word" rows="3" cols="30" maxlength="25" required></textarea>
+  </p>
+  <input type="submit" value="Tarkista oikeinkirjoitus" />
+</form>
+{% endblock %}
