@@ -7,6 +7,7 @@ Tämä on Helsingin yliopiston tietojenkäsittelytieteen kandiohjelman Aineopint
 ## Viikkoraportit
 [Viikkoraportti 1](docs/viikkoraportti1.md)
 
+[Viikkoraportti 2](docs/viikkoraportti2.md)
 ## Käyttöohjeet
 Kloonaa ensin projektin repositorio koneellesi ja siirry projektin hakemistoon, jonka jälkeen voit alustaa ohjelman riippuvuudet komennolla:
 ```
