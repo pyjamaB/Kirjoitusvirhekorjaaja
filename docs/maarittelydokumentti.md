@@ -19,3 +19,4 @@ Alla on käyttämäni lähteet:
 - [Wikipedian artikkeli triestä](https://en.wikipedia.org/wiki/Trie)
 - [Wikipedian artikkeli Dameraun-Levenshteinin -etäisyydestä](https://en.wikipedia.org/wiki/Damerau–Levenshtein_distance)
 - [Geeks for geeksin artikkeli Dameraun-Levenshteinin -etäisyydestä](https://www.geeksforgeeks.org/dsa/damerau-levenshtein-distance/)
+- [Geeks for geeksin artikkeli triestä](https://www.geeksforgeeks.org/dsa/trie-insert-and-search/)
