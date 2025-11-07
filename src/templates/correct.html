@@ -4,6 +4,9 @@
 
 {% block content %}
 <p>
-  {{ word }}
+  {{ result }}
+    {% for candidate in candidates %}
+      <li>{{ candidate }}</li>
+    {% endfor %}
 </p>
 {% endblock %}
