@@ -3,6 +3,11 @@ import damerau_levenshtein
 import xml.etree.ElementTree as ET
 
 class SpellCheck:
+    """Luokka, joka luo trie-tietorakenteen xml-tiedostosta
+    ja tarkistaa sanan oikeinkirjoituksen:
+    Attribuutit:
+        self.trie: luo trie-tietorakenteen.
+    """
     def __init__(self, xml_path):
         """Luokan konstruktori, joka poimii sanastotietokannan sanat xml-tiedostosta,
         ja palauttaa ne trie-tietorakenteeseen lisäämistä varten.
@@ -22,6 +27,13 @@ class SpellCheck:
             self.trie.add_word(word)
     
     def find_word(self, input_word):
+        """Luokan metodi, jota käytetään sanan
+        etsimiseen trie-tietorakenteesta.
+        Args:
+            input_word: käyttäjän antama sana.
+        Returns:
+            bool: palauttaa arvon True, jos sana löytyy triestä.
+        """
         return self.trie.search_word(input_word)
 
     def find_all_words(self, input_word, max_distance):
