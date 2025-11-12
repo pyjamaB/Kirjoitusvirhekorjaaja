@@ -26,3 +26,4 @@ class TestTrie(unittest.TestCase):
         self.assertEqual(True, self.trie.search_word("yksi"))
         self.assertEqual(True, self.trie.search_word("kaksi"))
         self.assertEqual(True, self.trie.search_word("kolme"))
+        self.assertEqual(False, self.trie.search_word("neljä"))
