@@ -1,14 +1,9 @@
 from flask import Flask
-from flask import abort, redirect, render_template, request
-from trie import Trie, Node
-from damerau_levenshtein import damerau_levenshtein_distance
-import vocabulary
+from flask import abort, render_template, request
+from spellchecker import SpellCheck
 
 app = Flask(__name__)
-trie = Trie()
-words = vocabulary.parse_words("src/wordfiles/joukahainen.xml")
-for word in words:
-    trie.add_word(word)
+spellchecker = SpellCheck("src/wordfiles/joukahainen.xml")
 
 @app.route("/")
 def index():
@@ -31,15 +26,12 @@ def check_typos():
     word = request.form["word"]
     if not word or len(word) > 25:
         abort(403)
-    if trie.search_word(word):
+    if spellchecker.find_word(word):
         result = "Sana on kirjoitettu oikein!"
         return render_template("correct.html", word=word , result=result)
     else:
-        candidates= []
-        for word2 in words:
-            suggested = damerau_levenshtein_distance()
-            if suggested.damerau_levenshtein(word, word2) <= 1:
-                candidates.append(word2)
+        candidates = spellchecker.find_all_words(word, 1)
+        candidates = sorted(candidates) 
         if len(candidates) > 0:
             result = "Tarkoititko sanaa:"
         else:
