@@ -1,1 +1,6 @@
 # Viikko 3
+Tällä viikolla olen keskittynyt siihen, että saan ohjelmoitua trie-tietorakenteen ja Damerau-Levenshteinin etäisyysalgoritmin mahdollisimman valmiiksi. Tämän lisäksi olen pyrkinyt suunnittelemaan ja toteuttamaan ensimmäiset yksikkötestit ja kirjoittamaan alustavan version testausraportista. Ohjelman toteuttaminen on edennyt kohtalaisen hyvin. Olen saanut tehtyä sille hyvin toimivan käyttöliittymän, ja trie-tietorakenne ja Damerau-Levenshteinin algoritmi näyttävät toimivan niin kuin on tarkoituskin. Myös alustavat testit toimivat hyvin. Olen käyttänyt aikaa projektiin yhteensä noin 12 tuntia.
+
+Opin tällä viikolla eniten ohjelman testauksesta ja testien suunnittelusta. Yksikkötestien toteuttaminen vaikuttaa nyt jo selkeältä, mutta minulla on mielessäni vielä kysymyksiä muista vaadittavista testeistä. Todennäköisesti kattava testaus vaatii ainakin invarianttitestien toteuttamista, mutta en ole varma, kannattaako ohjelmalle tehdä myös esimerkiksi suorituskykytestejä. Toisaalta invarianttitestien suunnittelu tuntuu vielä vaikealta: miten ohjelmaani olisi järkevää testata invarianttitesteillä?
+
+Seuraavalla viikolla aion keskittyä etenkin testaukseen. Aion saada yksikkötestit valmiiksi ja päästä toteuttamaan myös invarianttitestejä, jos ne osoittautuvat tarpeellisiksi.

@@ -4,10 +4,13 @@ Tämä on Helsingin yliopiston tietojenkäsittelytieteen kandiohjelman Aineopint
 ## Dokumentaatio
 [Määrittelydokumentti](docs/maarittelydokumentti.md)
 
+[Testausdokumentti](docs/testausdokumentti.md)
 ## Viikkoraportit
 [Viikkoraportti 1](docs/viikkoraportti1.md)
 
 [Viikkoraportti 2](docs/viikkoraportti2.md)
+
+[Viikkoraportti 3](docs/viikkoraportti3.md)
 ## Käyttöohjeet
 Kloonaa ensin projektin repositorio koneellesi ja siirry projektin hakemistoon, jonka jälkeen voit alustaa ohjelman riippuvuudet komennolla:
 ```
