@@ -20,7 +20,7 @@ class Trie:
         """Luokan konstruktori
         """
         self.root = Node()
-    
+
     def add_word(self, word):
         """Luokan metodi, jolla lisätään sana tietorakenteeseen.
         Args:
@@ -32,7 +32,7 @@ class Trie:
                 current_node.children[word[i]] = Node()
             current_node = current_node.children[word[i]]
         current_node.last_letter = True
-    
+
     def search_word(self, word):
         """Luokan metodi, jolla voidaan etsiä sana trie-tietorakenteesta.
         Args:

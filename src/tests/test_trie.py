@@ -9,7 +9,7 @@ class TestTrie(unittest.TestCase):
         self.trie.add_word("gamma")
         self.trie.add_word("yksi")
         self.trie.add_word("kaksi")
-        self.trie.add_word("kolme")        
+        self.trie.add_word("kolme")
 
     def test_add_to_trie(self):
         self.assertEqual(True, self.trie.search_word("alfa"))
@@ -19,7 +19,7 @@ class TestTrie(unittest.TestCase):
         self.assertEqual(True, self.trie.search_word("kaksi"))
         self.assertEqual(True, self.trie.search_word("kolme"))
 
-    def test_search_from_trie(self):   
+    def test_search_from_trie(self):
         self.assertEqual(True, self.trie.search_word("alfa"))
         self.assertEqual(True, self.trie.search_word("beeta"))
         self.assertEqual(True, self.trie.search_word("gamma"))

@@ -1,6 +1,6 @@
+import xml.etree.ElementTree as ET
 from trie import Trie
 import damerau_levenshtein
-import xml.etree.ElementTree as ET
 
 class SpellCheck:
     """Luokka, joka luo trie-tietorakenteen xml-tiedostosta
@@ -25,7 +25,7 @@ class SpellCheck:
         words.sort()
         for word in words:
             self.trie.add_word(word)
-    
+
     def find_word(self, input_word):
         """Luokan metodi, jota käytetään sanan
         etsimiseen trie-tietorakenteesta.

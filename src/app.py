@@ -13,7 +13,7 @@ def index():
     """
 
     return render_template("index.html")
-    
+
 @app.route("/check_typos", methods=["POST"])
 def check_typos():
     """Saa käyttäjältä syötteenä tarkistettavan sanan
@@ -29,11 +29,10 @@ def check_typos():
     if spellchecker.find_word(word):
         result = "Sana on kirjoitettu oikein!"
         return render_template("correct.html", word=word , result=result)
+    candidates = spellchecker.find_all_words(word, 1)
+    candidates = sorted(candidates)
+    if len(candidates) > 0:
+        result = "Tarkoititko sanaa:"
     else:
-        candidates = spellchecker.find_all_words(word, 1)
-        candidates = sorted(candidates) 
-        if len(candidates) > 0:
-            result = "Tarkoititko sanaa:"
-        else:
-            result = "Sanaa ei löytynyt."
-        return render_template("correct.html", word=word, result=result, candidates=candidates)
+        result = "Sanaa ei löytynyt."
+    return render_template("correct.html", word=word, result=result, candidates=candidates)
