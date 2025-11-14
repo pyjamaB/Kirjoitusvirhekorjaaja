@@ -55,8 +55,7 @@ nav li:not(:last-of-type) {
   text-align: center;
 }
 
-.review {
-  border: 2px solid black;
+.suggestion {
   margin: 1em;
   padding: 0.2em 0.5em;
 }

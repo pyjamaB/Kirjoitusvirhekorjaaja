@@ -5,8 +5,10 @@
 {% block content %}
 <p>
   {{ result }}
-    {% for candidate in candidates %}
-      <li>{{ candidate }}</li>
-    {% endfor %}
+  {% for candidate in candidates %}
+    <div class="suggestion">
+    <li>{{ candidate }}</li>
+    </div>
+  {% endfor %}
 </p>
 {% endblock %}
