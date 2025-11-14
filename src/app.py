@@ -24,7 +24,7 @@ def check_typos():
     """
 
     word = request.form["word"]
-    if not word or len(word) > 25:
+    if not word or len(word) > 35:
         abort(403)
     if spellchecker.find_word(word):
         result = "Sana on kirjoitettu oikein!"

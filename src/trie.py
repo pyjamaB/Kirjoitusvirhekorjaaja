@@ -27,6 +27,7 @@ class Trie:
             word: tietorakenteeseen tallennetava sana.
         """
         current_node = self.root
+        word = word.lower()
         for i in range(len(word)):
             if word[i] not in current_node.children:
                 current_node.children[word[i]] = Node()
@@ -41,6 +42,7 @@ class Trie:
             bool: True, jos sana löytyy tietorakenteesta.
         """
         current_node = self.root
+        word = word.lower()
         for i in range(len(word)):
             if word[i] not in current_node.children:
                 return False
