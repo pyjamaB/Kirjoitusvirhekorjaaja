@@ -8,9 +8,9 @@ Alla on sovelluksen testikattavuusraportti:
 Name                         Stmts   Miss Branch BrPart  Cover   Missing
 ------------------------------------------------------------------------
 src/damerau_levenshtein.py      15      0     12      0   100%
-src/spellchecker.py             28     28     12      0     0%   1-61
-src/trie.py                     21      0      8      0   100%
+src/spellchecker.py             28      0     12      1    98%   23->22
+src/trie.py                     23      0      8      0   100%
 ------------------------------------------------------------------------
-TOTAL                           64     28     32      0    58%
+TOTAL                           66      0     32      1    99%
 ```
 ## Käyttöliittymän testaus
