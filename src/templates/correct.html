@@ -4,6 +4,7 @@
 
 {% block content %}
 <p>
+  Syötetty sana: {{ word }}<br>
   {{ result }}
   {% for candidate in candidates %}
     <div class="suggestion">

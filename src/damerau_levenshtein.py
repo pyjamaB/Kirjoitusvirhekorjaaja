@@ -20,10 +20,10 @@ def damerau_levenshtein(word1, word2):
                 cost = 0
             else:
                 cost = 1
-            distance[i][j] = min(distance[i-1][j] + 1,
-                                 distance[i][j-1] + 1,
-                                 distance[i-1][j-1] + cost)
+            distance[i][j] = min(distance[i - 1][j] + 1,
+                                 distance[i][j - 1] + 1,
+                                 distance[i - 1][j - 1] + cost)
             if i > 1 and j > 1 and word1[i - 1] == word2[j - 2] and word1[i - 2] == word2[j - 1]:
                 distance[i][j] = min(distance[i][j],
                                      distance[i - 2][j - 2] + cost)
-    return distance[len(word1)][ len(word2)]
+    return distance[len(word1)][len(word2)]
