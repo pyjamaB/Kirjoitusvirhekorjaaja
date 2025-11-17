@@ -14,6 +14,7 @@ class TestSpellchecker(unittest.TestCase):
         self.assertEqual(True, self.spellchecker.find_word("testing"))
         self.assertEqual(True, self.spellchecker.find_word("testingagain"))
         self.assertEqual(True, self.spellchecker.find_word("testingoncemore"))
+        self.assertEqual(False, self.spellchecker.find_word(""))
 
     def test_find_all_words(self):
         set1 = {"testing"}
