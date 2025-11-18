@@ -44,7 +44,7 @@ class SpellCheck:
             input_word: käyttäjän antama sana.
             max_distance: pisin sallittu etäisyys verrattavien sanojen välillä.
         Returns:
-            self.all_words: sanojen joukko, joka on halutun etäisyyden päässä
+            result: sanojen lista, joka on halutun etäisyyden päässä
             käyttäjän antamasta sanasta.
         """
         self.all_words = set()
@@ -53,9 +53,10 @@ class SpellCheck:
             if current_node.last_letter:
                 distance = damerau_levenshtein.damerau_levenshtein(input_word, word)
                 if distance <= max_distance:
-                    self.all_words.add(word)
+                    self.all_words.add((word, distance))
             for letter in current_node.children:
                 visit_next_node(current_node.children[letter],
                                      word + letter)
         visit_next_node(self.trie.root, "")
-        return self.all_words
+        result = [w[0] for w in sorted(self.all_words, key=lambda w: w[1])]
+        return result

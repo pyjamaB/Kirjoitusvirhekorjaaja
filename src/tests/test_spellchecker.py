@@ -17,9 +17,9 @@ class TestSpellchecker(unittest.TestCase):
         self.assertEqual(False, self.spellchecker.find_word(""))
 
     def test_find_all_words(self):
-        set1 = {"testing"}
-        set2 = {"testingagain"}
-        set3 = {"testingoncemore"}
-        self.assertEqual(set1, self.spellchecker.find_all_words("testingy", 1))
-        self.assertEqual(set2, self.spellchecker.find_all_words("testingagai", 1))
-        self.assertEqual(set3, self.spellchecker.find_all_words("testingoncemor", 1))
+        list1 = ["testing"]
+        list2 = ["testingagain"]
+        list3 = ["testingoncemore"]
+        self.assertEqual(list1, self.spellchecker.find_all_words("testingy", 1))
+        self.assertEqual(list2, self.spellchecker.find_all_words("testingagai", 1))
+        self.assertEqual(list3, self.spellchecker.find_all_words("testingoncemor", 1))

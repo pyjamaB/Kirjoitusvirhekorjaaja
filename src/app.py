@@ -30,7 +30,6 @@ def check_typos():
         result = "Sana on kirjoitettu oikein!"
         return render_template("correct.html", word=word , result=result)
     candidates = spellchecker.find_all_words(word, 1)
-    candidates = sorted(candidates)
     if len(candidates) > 0:
         result = "Tarkoititko sanaa:"
     else:
