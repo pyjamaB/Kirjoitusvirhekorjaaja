@@ -11,7 +11,7 @@ Tiedosto app.py sisältää ohjelman käyttöliittymän, joka on toteutettu verk
 
 Verkosta hankitun tiedon perusteella trie-tietorakenteen aikavaativuus on O(n). Dameraun-Levenshteinin -etäisyyden aikavaativuus on puolestaan O(m*n).
 
-# #Sovelluksen puutteet ja parannusehdotukset
+## Sovelluksen puutteet ja parannusehdotukset
 
 Sovelluksella voi nähdä olevan useita puutteita, joita voisi jatkossa parantaa. Ensinnäkin sovellus korjaa vain yksittäisiä sanoja eikä pidempiä tekstinpätkiä. Ohjelmaa on mahdollista muokata kohtalaisen pienellä vaivalla niin, että se kykenisi korjaamaan useampia sanoja kerralla. Toisaalta ohjelma toimii ainoastaan suomenkielisellä sanastolla. Jatkossa ohjelmaa voisi tarvittaessa muokata niin, että käyttäjä voisi valita haluamansa kielen, jolloin ohjelma voisi korjata myös muilla kielillä kirjoitettuja sanoja. Ohjelma ei myöskään ota huomioon sanojen taivutuksia, vaan se vertaa korjattavia sanoja ainoastaan sanastosta löytyviin perusmuotoisiin sanoihin. Jatkossa sovellusta voisi yrittää kehittää niin, että se osaisi korjata myös taivutettuja sanoja. Neljäs ohjelman puute on se, että se tarjoaa korjausehdotukset sanalistana sen sijaan, että se korjaisi sanat automaattisesti. Jotta sovellusta olisi sujuvampi käyttää, se voisi tarjota käyttäjälle suoraan vaihtoehdon korjauksesta tekstin joukkoon, ja käyttäjä voisi tarvittaessa muokata vielä korjausta, jos se ei ole käyttäjän tarkoittama sana.
 
