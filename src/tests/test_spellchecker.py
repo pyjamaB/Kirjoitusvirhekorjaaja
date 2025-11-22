@@ -1,6 +1,4 @@
 import unittest
-from trie import Trie
-import damerau_levenshtein
 from spellchecker import SpellCheck
 
 class TestSpellchecker(unittest.TestCase):
@@ -9,7 +7,7 @@ class TestSpellchecker(unittest.TestCase):
         test_words = ["testing", "testingagain", "testingoncemore"]
         for word in test_words:
             self.spellchecker.trie.add_word(word)
-    
+
     def test_find_word(self):
         self.assertEqual(True, self.spellchecker.find_word("testing"))
         self.assertEqual(True, self.spellchecker.find_word("testingagain"))
