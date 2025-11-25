@@ -1,7 +1,8 @@
 
-def transposition_cost(key1, key2):
+def weighted_cost(key1, key2, base_cost):
     """Funktio, joka laskee ensin kahden merkin välisen etäisyyden
-    näppäimistöllä ja laskee etäisyyden perusteella painon transpoosille.
+    näppäimistöllä ja laskee etäisyyden perusteella painon transpoosille
+    ja korvaukselle.
     Args:
         key1 ja key2: kirjaimet, joiden välinen etäisyys näppäimistöllä
         lasketaan.
@@ -21,7 +22,7 @@ def transposition_cost(key1, key2):
     value1 = alphabet_keys[key1]
     value2 = alphabet_keys[key2]
     key_distance =  abs(value1[0] - value2[0]) + abs(value1[1] - value2[1])
-    return 0.5 + (0.1 * key_distance)
+    return base_cost + (0.1 * key_distance)
 
 def damerau_levenshtein(word1, word2):
     """Funktio, joka selvittää kahden sanan välisen etäisyyden.
@@ -43,12 +44,12 @@ def damerau_levenshtein(word1, word2):
             if word1[i - 1] == word2[j - 1]:
                 cost = 0
             else:
-                cost = 1
+                cost = weighted_cost(word1[i - 1], word2[j - 1],  0.7)
             distance[i][j] = min(distance[i - 1][j] + 1,
                                  distance[i][j - 1] + 1,
                                  distance[i - 1][j - 1] + cost)
             if i > 1 and j > 1 and word1[i - 1] == word2[j - 2] and word1[i - 2] == word2[j - 1]:
                 distance[i][j] = min(distance[i][j],
                                      distance[i - 2][j - 2] +
-                                     transposition_cost(word1[i - 2], word1[i - 1]))
+                                     weighted_cost(word1[i - 2], word1[i - 1], 0.5))
     return distance[len(word1)][len(word2)]
