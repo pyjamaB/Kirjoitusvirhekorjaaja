@@ -24,6 +24,7 @@ class SpellCheck:
                 words.append(element.text.strip())
         words.sort()
         for word in words:
+            word = word.replace("=", "")
             self.trie.add_word(word)
 
     def find_word(self, input_word):
