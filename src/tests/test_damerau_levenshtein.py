@@ -11,3 +11,5 @@ class TestDamerauLevenshtein(unittest.TestCase):
         self.assertEqual(1, damerau_levenshtein("testit", "testi"))
         self.assertEqual(1.4, damerau_levenshtein("tahti", "tuhti"))
         self.assertEqual(1.7, damerau_levenshtein("tähti", "tahti"))
+        self.assertEqual(1.7, damerau_levenshtein("testi", "etstit"))
+        self.assertEqual(2.4, damerau_levenshtein("abcdefg", "tabcedfh"))
