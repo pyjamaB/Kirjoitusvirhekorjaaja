@@ -8,10 +8,10 @@ Ohjelman haarautumakattavuus on 99 %. Alla on sovelluksen testikattavuusraportti
 Name                         Stmts   Miss Branch BrPart  Cover   Missing
 ------------------------------------------------------------------------
 src/damerau_levenshtein.py      23      0     14      0   100%
-src/spellchecker.py             29      0     12      1    98%   23->22
+src/spellchecker.py             30      0     12      1    98%   23->22
 src/trie.py                     23      0      8      0   100%
 ------------------------------------------------------------------------
-TOTAL                           75      0     34      1    99%
+TOTAL                           76      0     34      1    99%
 ```
 ## Käyttöliittymän testaus
 

@@ -22,3 +22,6 @@ class TestSpellchecker(unittest.TestCase):
         self.assertEqual(list2, self.spellchecker.find_all_words("testingagai", 1))
         self.assertEqual(list3, self.spellchecker.find_all_words("tsetingoncemore", 1))
         self.assertEqual(list1, self.spellchecker.find_all_words("tasting", 1))
+        self.assertNotEqual(list1, self.spellchecker.find_all_words("tastingy", 1))
+        self.assertNotEqual(list1, self.spellchecker.find_all_words("tästing", 1))
+        self.assertNotEqual(list3, self.spellchecker.find_all_words("testingoncmeore", 1))
