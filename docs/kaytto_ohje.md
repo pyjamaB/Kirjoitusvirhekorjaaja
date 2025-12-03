@@ -14,8 +14,16 @@ python3 src/index.py
 ```
 Tämän jälkeen voit avata selaimen ja siirtyä komentorivin antamaan osoitteeseen. Saat suljettua paikallisesti ajettavan sovelluksen komennolla ctrl + c.
 
-Ohjelman testit voit ajaa komennolla:
+Ohjelman testit voit ajaa virtuaaliympäristössä komennolla:
 ```
 pytest src
+```
+Testikattavuuden saa kerättyä virtuaaliympäristössä komennolla:
+```
+coverage run --branch -m pytest src
+```
+Edellisen komennon jälkeen raportin testikattavuudesta saa tulostettua komennolla:
+```
+coverage report -m
 ```
 Virtuaaliympäristöstä pääset lopuksi pois kirjoittamalla komennon exit komentoriville.
