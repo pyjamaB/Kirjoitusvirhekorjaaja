@@ -51,7 +51,7 @@ class SpellCheck:
         self.all_words = set()
 
         def visit_next_node(current_node, word):
-            if current_node.last_letter:
+            if current_node.last_letter and abs(len(word) - len(input_word)) <= 1:
                 distance = damerau_levenshtein.damerau_levenshtein(input_word, word)
                 if distance <= max_distance:
                     self.all_words.add((word, distance))
