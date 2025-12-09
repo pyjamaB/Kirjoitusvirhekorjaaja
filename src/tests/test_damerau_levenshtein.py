@@ -30,7 +30,7 @@ class TestDamerauLevenshtein(unittest.TestCase):
         self.assertEqual(2, damerau_levenshtein("testi", "tastit"))
     def test_damerau_levenshtein_replace_remove_letter(self):
         self.assertEqual(2, damerau_levenshtein("testi", "tast"))
-    def test_damerau_levenshtein_replace_transposition(self):   
+    def test_damerau_levenshtein_replace_transposition(self):
         self.assertEqual(1.9, damerau_levenshtein("testi", "tatsi"))
     def test_damerau_levenshtein_add_letter_transpose_remove(self):
         self.assertEqual(2.6, damerau_levenshtein("abcdefg", "tabcedf"))
