@@ -1,11 +1,12 @@
 import xml.etree.ElementTree as ET
 from trie import Trie
-import damerau_levenshtein
+from damerau_levenshtein import DamerauLevenshtein
 
 class SpellCheck:
     """Luokka, joka luo trie-tietorakenteen xml-tiedostosta
     ja tarkistaa sanan oikeinkirjoituksen:
     Attribuutit:
+        self.damerau: luo DamerauLevenshtein-luokan
         self.trie: luo trie-tietorakenteen.
     """
     def __init__(self, xml_path):
@@ -14,6 +15,7 @@ class SpellCheck:
         Args:
             xml_path: xml-tiedoston sijainti hakemistossa.
         """
+        self.damerau = DamerauLevenshtein()
         self.trie = Trie()
         tree = ET.parse(xml_path)
         root = tree.getroot()
@@ -52,7 +54,7 @@ class SpellCheck:
 
         def visit_next_node(current_node, word):
             if current_node.last_letter and abs(len(word) - len(input_word)) <= 1:
-                distance = damerau_levenshtein.damerau_levenshtein(input_word, word)
+                distance = self.damerau.damerau_levenshtein(input_word, word)
                 if distance <= max_distance:
                     self.all_words.add((word, distance))
             for letter in current_node.children:
