@@ -13,9 +13,8 @@ class DamerauLevenshtein:
                 self.distances[letter1][letter2] = self.calculate_distance(letter1, letter2)
 
     def calculate_distance(self, key1, key2):
-        """Funktio, joka laskee ensin kahden merkin välisen etäisyyden
-        näppäimistöllä ja laskee etäisyyden perusteella painon transpoosille
-        ja korvaukselle.
+        """Funktio, joka laskee kahden merkin välisen etäisyyden
+        näppäimistöllä.
         Args:
             key1 ja key2: kirjaimet, joiden välinen etäisyys näppäimistöllä
             lasketaan.
