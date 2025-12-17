@@ -1,17 +1,17 @@
 # Testausdokumentti
 
 ## Yksikkötestaus
-Projektin yksikkötestauksessa on käytetty unittest-kehystä, jonka avulla on testattu src-hakemistossa olevia luokkia ja funktioita. Käyttöliittymän toiminta on rajattu automaattisten testien ulkopuolelle. Src-hakemistossa automaattiset testit testaavat trie-tietorakenteeseen, Damerau-Levenshteinin -etäisyysalgoritmiin sekä sanan oikeinkirjoituksen tarkastamiseen liittyviä toimintoja. Testit testaavat sovelluksen toimintaa sekä oikeanmuotoisilla että virheellisillä syötteillä. Trie-tietorakenteesta on testattu, että ohjelma tallentaa sanat oikein kuudella eri sanalla ja että se myös palauttaa sanat oikein, kun käyttäjä etsii sanaa tietorakenteesta. Lisäksi on testattu, että trie-tietorakenne on tallennettu oikein hakemalla kerralla koko tietorakenteen sisältö.  Dameraun-Levenshteinin algoritmista on testattu, että ohjelma laskee oikein haettavien sanojen välisen etäisyyden erilaisilla syötteillä. Etäisyyden hakemista testataan tyhjällä syötteellä, samalla sanalla, yhden kirjaimen lisäyksellä, yhden kirjaimen poistolla, kahden kirjaimen vaihtumisella keskenään ja kirjaimen korvaamisella. Lisäksi funktiosta on vielä testattu, että se laskee etäisyyden oikein, kun sanassa on useampi samanaikainen muokkaus. Testitapauksissa on erilaisia yhdistelmiä, joissa on samaan aikaan kirjaimen lisäys, poisto, kahden kirjaimen vaihtuminen keskenään tai yhden kirjaimen korvaus. Kirjoitusvirheiden korjaamisen toiminnot yhdistävästä tiedostosta spellchecker.py on testattu, että se hakee oikein trie-tietorakenteesta löytyvät sanat ja palauttaa oikein listan haettavaa sanaa lähellä olevista sanoista, jos haettavaa sanaa ei löydy trie-tietorakenteesta.
+Projektin yksikkötestauksessa on käytetty unittest-kehystä, jonka avulla on testattu src-hakemistossa olevia luokkia ja funktioita. Käyttöliittymän toiminta on rajattu automaattisten testien ulkopuolelle. Src-hakemistossa automaattiset testit testaavat trie-tietorakenteeseen, Damerau-Levenshteinin -etäisyysalgoritmiin sekä sanan oikeinkirjoituksen tarkastamiseen liittyviä toimintoja. Testit testaavat sovelluksen toimintaa sekä oikeanmuotoisilla että virheellisillä syötteillä. Trie-tietorakenteesta on testattu, että ohjelma tallentaa sanat oikein kuudella eri sanalla ja että se myös palauttaa sanat oikein, kun käyttäjä etsii sanaa tietorakenteesta. Lisäksi on testattu, että trie-tietorakenne on tallennettu oikein hakemalla kerralla koko tietorakenteen sisältö.  Dameraun-Levenshteinin algoritmista on testattu, että ohjelma laskee oikein haettavien sanojen välisen etäisyyden erilaisilla syötteillä. Etäisyyden hakemista testataan tyhjällä syötteellä, samalla sanalla, yhden kirjaimen lisäyksellä, yhden kirjaimen poistolla, kahden kirjaimen vaihtumisella keskenään ja kirjaimen korvaamisella. Lisäksi funktiosta on vielä testattu, että se laskee etäisyyden oikein, kun sanassa on useampi samanaikainen muokkaus. Testitapauksissa on erilaisia yhdistelmiä, joissa on samaan aikaan kirjaimen lisäys, poisto, kahden kirjaimen vaihtuminen keskenään tai yhden kirjaimen korvaus. Näiden lisäksi on vielä testattu, että kirjainten välinen etäisyys näppäimistöllä ja sen perusteella laskettu paino on laskettu oikein. Kirjoitusvirheiden korjaamisen toiminnot yhdistävästä tiedostosta spellchecker.py on testattu, että se hakee oikein trie-tietorakenteesta löytyvät sanat ja palauttaa oikein listan haettavaa sanaa lähellä olevista sanoista, jos haettavaa sanaa ei löydy trie-tietorakenteesta.
 ### Testikattavuus
 Ohjelman haarautumakattavuus on 99 %. Alla on sovelluksen testikattavuusraportti:
 ```
 Name                         Stmts   Miss Branch BrPart  Cover   Missing
 ------------------------------------------------------------------------
-src/damerau_levenshtein.py      23      0     14      0   100%
-src/spellchecker.py             30      0     12      1    98%   23->22
+src/damerau_levenshtein.py      34      0     20      0   100%
+src/spellchecker.py             31      0     12      1    98%   23->22
 src/trie.py                     23      0      8      0   100%
 ------------------------------------------------------------------------
-TOTAL                           76      0     34      1    99%
+TOTAL                           88      0     34      1    99%
 ```
 ## Käyttöliittymän testaus
 
