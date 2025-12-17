@@ -5,34 +5,42 @@ class TestDamerauLevenshtein(unittest.TestCase):
     def setUp(self):
         self.damerau = DamerauLevenshtein()
     def test_damerau_levenshtein_add_letter(self):
-        self.assertEqual(1, self.damerau.damerau_levenshtein("testi", "testit"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("testi", "testit"), 1.0)
     def test_damerau_levenshtein_remove_letter(self):
-        self.assertEqual(1, self.damerau.damerau_levenshtein("testi", "test"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("testi", "test"), 1.0)
     def test_damerau_levenshtein_same_words(self):
-        self.assertEqual(0, self.damerau.damerau_levenshtein("testi", "testi"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("testi", "testi"), 0)
     def test_damerau_levenshtein_empty_string(self):
-        self.assertEqual(5, self.damerau.damerau_levenshtein("", "testi"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("", "testi"), 5.0)
     def test_damerau_levenshtein_transposition(self):
-        self.assertEqual(0.9, self.damerau.damerau_levenshtein("tetsi", "testi"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("tetsi", "testi"), 0.9)
     def test_damerau_levenshtein_add_letter_change_order(self):
-        self.assertEqual(1, self.damerau.damerau_levenshtein("testit", "testi"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("testit", "testi"), 1.0)
     def test_damerau_levenshtein_replace_letter(self):
-        self.assertEqual(1.4, self.damerau.damerau_levenshtein("tahti", "tuhti"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("tahti", "tuhti"), 1.4)
     def test_damerau_levenshtein_replace_letter_unicode(self):
-        self.assertEqual(1.7, self.damerau.damerau_levenshtein("tähti", "tahti"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("tähti", "tahti"), 1.7)
     def test_damerau_levenshtein_add_letter_transposition(self):
-        self.assertEqual(1.7, self.damerau.damerau_levenshtein("testi", "etstit"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("testi", "etstit"), 1.7)
     def test_damerau_levenshtein_add_letter_transpose_replace(self):
-        self.assertEqual(2.4, self.damerau.damerau_levenshtein("abcdefg", "tabcedfh"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("abcdefg", "tabcedfh"), 2.4)
     def test_damerau_levenshtein_add_letter_remove(self):
-        self.assertEqual(2, self.damerau.damerau_levenshtein("abcdefg", "tabcdef"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("abcdefg", "tabcdef"), 2.0)
     def test_damerau_levenshtein_remove_letter_transposition(self):
-        self.assertEqual(1.7, self.damerau.damerau_levenshtein("testi", "etst"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("testi", "etst"), 1.7)
     def test_damerau_levenshtein_replace_add_letter(self):
-        self.assertEqual(2, self.damerau.damerau_levenshtein("testi", "tastit"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("testi", "tastit"), 2.0)
     def test_damerau_levenshtein_replace_remove_letter(self):
-        self.assertEqual(2, self.damerau.damerau_levenshtein("testi", "tast"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("testi", "tast"), 2.0)
     def test_damerau_levenshtein_replace_transposition(self):
-        self.assertEqual(1.9, self.damerau.damerau_levenshtein("testi", "tatsi"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("testi", "tatsi"), 1.9)
     def test_damerau_levenshtein_add_letter_transpose_remove(self):
-        self.assertEqual(2.6, self.damerau.damerau_levenshtein("abcdefg", "tabcedf"))
+        self.assertAlmostEqual(self.damerau.damerau_levenshtein("abcdefg", "tabcedf"), 2.6)
+    def test_calculate_distance(self):
+        self.assertEqual(self.damerau.calculate_distance("w", "e"), 1)
+    def test_calculate_distance(self):
+        self.assertEqual(self.damerau.calculate_distance("q", "d"), 3)
+    def test_keyboard_distance_transpose(self):
+        self.assertAlmostEqual(self.damerau.keyboard_distance("q", "m", 0.5), 1.3)
+    def test_keyboard_distance_replacement(self):
+        self.assertAlmostEqual(self.damerau.keyboard_distance("w", "r", 0.7), 0.9)

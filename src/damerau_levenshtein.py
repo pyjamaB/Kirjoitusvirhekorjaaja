@@ -31,7 +31,7 @@ class DamerauLevenshtein:
         value1 = alphabet_keys[key1]
         value2 = alphabet_keys[key2]
         key_distance =  abs(value1[0] - value2[0]) + abs(value1[1] - value2[1])
-        return (0.1 * key_distance)
+        return key_distance
 
     def keyboard_distance(self, k1, k2, base_cost):
         """Funktio, joka laskee kirjainten välisten etäisyyksien
@@ -45,7 +45,7 @@ class DamerauLevenshtein:
         """
         if k1 not in self.distances or k2 not in self.distances:
             return 2.0
-        return self.distances[k1][k2] + base_cost
+        return (self.distances[k1][k2] * 0.1) + base_cost
 
     def damerau_levenshtein(self, word1, word2):
         """Funktio, joka selvittää kahden sanan välisen etäisyyden.
