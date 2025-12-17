@@ -9,19 +9,19 @@ class TestSpellchecker(unittest.TestCase):
             self.spellchecker.trie.add_word(word)
 
     def test_find_word(self):
-        self.assertEqual(True, self.spellchecker.find_word("testing"))
-        self.assertEqual(True, self.spellchecker.find_word("testingagain"))
-        self.assertEqual(True, self.spellchecker.find_word("testingoncemore"))
-        self.assertEqual(False, self.spellchecker.find_word(""))
+        self.assertEqual(self.spellchecker.find_word("testing"), True)
+        self.assertEqual(self.spellchecker.find_word("testingagain"), True)
+        self.assertEqual(self.spellchecker.find_word("testingoncemore"), True)
+        self.assertEqual(self.spellchecker.find_word(""), False)
 
     def test_find_all_words(self):
         list1 = ["testing"]
         list2 = ["testingagain"]
         list3 = ["testingoncemore"]
-        self.assertEqual(list1, self.spellchecker.find_all_words("testingy", 1))
-        self.assertEqual(list2, self.spellchecker.find_all_words("testingagai", 1))
-        self.assertEqual(list3, self.spellchecker.find_all_words("tsetingoncemore", 1))
-        self.assertEqual(list1, self.spellchecker.find_all_words("tasting", 1))
-        self.assertNotEqual(list1, self.spellchecker.find_all_words("tastingy", 1))
-        self.assertNotEqual(list1, self.spellchecker.find_all_words("tästing", 1))
-        self.assertNotEqual(list3, self.spellchecker.find_all_words("testingoncmeore", 1))
+        self.assertEqual(self.spellchecker.find_all_words("testingy", 1), list1)
+        self.assertEqual(self.spellchecker.find_all_words("testingagai", 1), list2)
+        self.assertEqual(self.spellchecker.find_all_words("tsetingoncemore", 1), list3)
+        self.assertEqual(self.spellchecker.find_all_words("tasting", 1), list1)
+        self.assertNotEqual(self.spellchecker.find_all_words("tastingy", 1), list1)
+        self.assertNotEqual(self.spellchecker.find_all_words("tästing", 1), list1)
+        self.assertNotEqual(self.spellchecker.find_all_words("testingoncmeore", 1), list3)

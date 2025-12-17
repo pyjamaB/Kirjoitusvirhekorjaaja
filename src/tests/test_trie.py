@@ -14,14 +14,14 @@ class TestTrie(unittest.TestCase):
         self.trie.add_word("kolme")
 
     def test_add_and_search_trie(self):
-        self.assertEqual(True, self.trie.search_word("alfa"))
-        self.assertEqual(True, self.trie.search_word("beeta"))
-        self.assertEqual(True, self.trie.search_word("gamma"))
-        self.assertEqual(True, self.trie.search_word("yksi"))
-        self.assertEqual(True, self.trie.search_word("kaksi"))
-        self.assertEqual(True, self.trie.search_word("kolme"))
-        self.assertEqual(False, self.trie.search_word("neljä"))
-        self.assertEqual(False, self.trie.search_word(""))
+        self.assertEqual(self.trie.search_word("alfa"), True)
+        self.assertEqual(self.trie.search_word("beeta"), True)
+        self.assertEqual(self.trie.search_word("gamma"), True)
+        self.assertEqual(self.trie.search_word("yksi"), True)
+        self.assertEqual(self.trie.search_word("kaksi"), True)
+        self.assertEqual(self.trie.search_word("kolme"), True)
+        self.assertEqual(self.trie.search_word("neljä"), False)
+        self.assertEqual(self.trie.search_word(""), False)
 
     def test_search_allwords_trie(self):
         def find_all_words(self):
@@ -36,7 +36,7 @@ class TestTrie(unittest.TestCase):
             visit_next_node(self.trie.root, "")
             return self.all_words_string
         all_in_string = find_all_words(self)
-        self.assertEqual("alfabeetagammayksikaksikolme", all_in_string)
+        self.assertEqual(all_in_string, "alfabeetagammayksikaksikolme")
 
     @given(arvo=st.text(alphabet="abcdefghijklmnopqrstyvwxyzåäö", min_size=1, max_size=35))
     @settings(max_examples=500)
